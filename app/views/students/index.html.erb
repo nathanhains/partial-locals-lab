@@ -1,0 +1,10 @@
+<%= form_for 'index', :url => students_path do |f| %>
+  <%= f.text_field :query%>
+  <%= f.submit "Search" %>
+<% end %>
+
+<ul>
+<% @students.each do |student| %>
+  <li><%= render partial: 'student', locals: {student: student } %></li>
+<% end %>
+</ul> 
